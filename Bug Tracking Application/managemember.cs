@@ -193,9 +193,9 @@ namespace Bug_Tracking_Application
             {
                 try
                 {
-                    MemberId = Convert.ToInt32(dgvmembers.SelectedRows[0].Cells["memberId"].Value.ToString());
-                    txtusername.Text = dgvmembers.SelectedRows[0].Cells["username"].Value.ToString();
-                    txtmembername.Text = dgvmembers.SelectedRows[0].Cells["membername"].Value.ToString();
+                    MemberId = Convert.ToInt32(dgvmembers.SelectedRows[0].Cells["MemberId"].Value.ToString());
+                    txtusername.Text = dgvmembers.SelectedRows[0].Cells["UserName"].Value.ToString();
+                    txtmembername.Text = dgvmembers.SelectedRows[0].Cells["Name"].Value.ToString();
                     txtpassword.Text = dgvmembers.SelectedRows[0].Cells["password"].Value.ToString();
                     cmbrole.Text = dgvmembers.SelectedRows[0].Cells["role"].Value.ToString();
                     txtaddress.Text = dgvmembers.SelectedRows[0].Cells["address"].Value.ToString();

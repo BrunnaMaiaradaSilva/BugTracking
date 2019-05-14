@@ -99,7 +99,9 @@ namespace BusinessLogicLayer
                 throw ex;
             }
         }
-        public bool BugSolutionTable(int BugSolutionId,
+
+ 
+        public bool BugSolutionTable(int BugSolutionId, 
             String BugSolvedBy,
             DateTime Date,
             String Project,
