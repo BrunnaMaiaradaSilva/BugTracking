@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{72E8DADF-E756-49CC-9107-3C9F609C0EB3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bug_Tracking_Application</RootNamespace>
+    <AssemblyName>Bug Tracking Application</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bugbymember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bugbymember.Designer.cs">
+      <DependentUpon>bugbymember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bugbyproduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bugbyproduct.Designer.cs">
+      <DependentUpon>bugbyproduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bugentry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bugentry.Designer.cs">
+      <DependentUpon>bugentry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bugsolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bugsolution.Designer.cs">
+      <DependentUpon>bugsolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperClass.cs" />
+    <Compile Include="loginform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loginform.Designer.cs">
+      <DependentUpon>loginform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="managemember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="managemember.Designer.cs">
+      <DependentUpon>managemember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="manageproject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manageproject.Designer.cs">
+      <DependentUpon>manageproject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Searchbug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Searchbug.Designer.cs">
+      <DependentUpon>Searchbug.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="bugbymember.resx">
+      <DependentUpon>bugbymember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bugbyproduct.resx">
+      <DependentUpon>bugbyproduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bugentry.resx">
+      <DependentUpon>bugentry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bugsolution.resx">
+      <DependentUpon>bugsolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loginform.resx">
+      <DependentUpon>loginform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="managemember.resx">
+      <DependentUpon>managemember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manageproject.resx">
+      <DependentUpon>manageproject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Searchbug.resx">
+      <DependentUpon>Searchbug.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
+      <Project>{7aa51424-fd52-4673-a0cd-4c69f4d16c2c}</Project>
+      <Name>BusinessLogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{d320cffa-8ddf-4e8d-98e6-c2c5e66647c3}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

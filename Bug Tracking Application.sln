@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bug Tracking Application", "Bug Tracking Application\Bug Tracking Application.csproj", "{72E8DADF-E756-49CC-9107-3C9F609C0EB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{D320CFFA-8DDF-4E8D-98E6-C2C5E66647C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{7AA51424-FD52-4673-A0CD-4C69F4D16C2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72E8DADF-E756-49CC-9107-3C9F609C0EB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72E8DADF-E756-49CC-9107-3C9F609C0EB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72E8DADF-E756-49CC-9107-3C9F609C0EB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72E8DADF-E756-49CC-9107-3C9F609C0EB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D320CFFA-8DDF-4E8D-98E6-C2C5E66647C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D320CFFA-8DDF-4E8D-98E6-C2C5E66647C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D320CFFA-8DDF-4E8D-98E6-C2C5E66647C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D320CFFA-8DDF-4E8D-98E6-C2C5E66647C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AA51424-FD52-4673-A0CD-4C69F4D16C2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AA51424-FD52-4673-A0CD-4C69F4D16C2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AA51424-FD52-4673-A0CD-4C69F4D16C2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AA51424-FD52-4673-A0CD-4C69F4D16C2C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
