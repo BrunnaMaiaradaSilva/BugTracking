@@ -27,9 +27,11 @@ namespace Bug_Tracking_Application
         public int MemberId;
 
 
-        private void btnexit_Click(object sender, EventArgs e)
+
+		//close the window 
+		private void btnexit_Click(object sender, EventArgs e)
         {
-            this.Close(); //close the window 
+            this.Close(); 
         }
 
         //retrieve the data on DataGridView 
@@ -97,6 +99,7 @@ namespace Bug_Tracking_Application
         //create user
         private void CreateUser()
         {
+			//try catch exception
             try
             {
                 bool res = blc.MemberTable(0,
@@ -114,14 +117,16 @@ namespace Bug_Tracking_Application
                        1);
                 if (res == true)
                 {
-                    MessageBox.Show("Success to Create member");
+					//display message of adding memeber in database
+                    MessageBox.Show("Success to Add member");
                     dgvmembers.DataSource = mc.GetAllUsers();
                     HelperClass.makeFieldsBlank(grpContainer);
                     picmembers.Image = null;
                 }
                 else
                 {
-                    MessageBox.Show("Couldn't create selected member"); //display error message as data cannot be stored
+					//display error message as data cannot be stored
+					MessageBox.Show("Couldn't Add selected member"); 
                     dgvmembers.DataSource = mc.GetAllUsers();
                     HelperClass.makeFieldsBlank(grpContainer);
                     picmembers.Image = null;
@@ -132,7 +137,10 @@ namespace Bug_Tracking_Application
                 MessageBox.Show(ex.Message);
             }
         }
-            public bool DublicateUser() //helps in data store as if users have same information
+
+
+		//helps in data store as if users have same information
+		public bool DublicateUser() 
             {
             int x = 0;
             try
@@ -140,7 +148,7 @@ namespace Bug_Tracking_Application
                
                 for (int i = 0;i<dgvmembers.Rows.Count;i++)
                 {
-                    if (txtusername.Text == dgvmembers.Rows[i].Cells["username"].Value.ToString())
+                    if (txtusername.Text == dgvmembers.Rows[i].Cells["UserName"].Value.ToString())
                         x = 1;
                 }
                  
@@ -156,7 +164,8 @@ namespace Bug_Tracking_Application
                 return false;
         }
 
-            private void btnbrowse_Click(object sender, EventArgs e)
+        //Browse image in button click
+        private void btnbrowse_Click(object sender, EventArgs e)
             {
                 try
                 {
@@ -196,15 +205,15 @@ namespace Bug_Tracking_Application
                     MemberId = Convert.ToInt32(dgvmembers.SelectedRows[0].Cells["MemberId"].Value.ToString());
                     txtusername.Text = dgvmembers.SelectedRows[0].Cells["UserName"].Value.ToString();
                     txtmembername.Text = dgvmembers.SelectedRows[0].Cells["Name"].Value.ToString();
-                    txtpassword.Text = dgvmembers.SelectedRows[0].Cells["password"].Value.ToString();
-                    cmbrole.Text = dgvmembers.SelectedRows[0].Cells["role"].Value.ToString();
-                    txtaddress.Text = dgvmembers.SelectedRows[0].Cells["address"].Value.ToString();
-                    txtemail.Text = dgvmembers.SelectedRows[0].Cells["email"].Value.ToString();
-                    cmbgender.Text = dgvmembers.SelectedRows[0].Cells["gender"].Value.ToString();
-                    txtcontact.Text = dgvmembers.SelectedRows[0].Cells["contact"].Value.ToString();
-                    dtpbirthdate.Text = dgvmembers.SelectedRows[0].Cells["birthdate"].Value.ToString();
-                    dtpjoiningdate.Text = dgvmembers.SelectedRows[0].Cells["joiningdate"].Value.ToString();
-                    MemoryStream memoryStream = new MemoryStream((byte[])dgvmembers.SelectedRows[0].Cells["profilePicture"].Value);
+                    txtpassword.Text = dgvmembers.SelectedRows[0].Cells["Password"].Value.ToString();
+                    cmbrole.Text = dgvmembers.SelectedRows[0].Cells["Role"].Value.ToString();
+                    txtaddress.Text = dgvmembers.SelectedRows[0].Cells["Address"].Value.ToString();
+                    txtemail.Text = dgvmembers.SelectedRows[0].Cells["Email"].Value.ToString();
+                    cmbgender.Text = dgvmembers.SelectedRows[0].Cells["Gender"].Value.ToString();
+                    txtcontact.Text = dgvmembers.SelectedRows[0].Cells["Contact"].Value.ToString();
+                    dtpbirthdate.Text = dgvmembers.SelectedRows[0].Cells["DOB"].Value.ToString();
+                    dtpjoiningdate.Text = dgvmembers.SelectedRows[0].Cells["DOJ"].Value.ToString();
+                    MemoryStream memoryStream = new MemoryStream((byte[])dgvmembers.SelectedRows[0].Cells["Image"].Value);
                     picmembers.Image = Image.FromStream(memoryStream);
                 }
                 catch (Exception ex)
@@ -214,7 +223,9 @@ namespace Bug_Tracking_Application
                 }
             }
 
-            private void btnupdate_Click(object sender, EventArgs e)
+
+        //update the date entered into the database
+        private void btnupdate_Click(object sender, EventArgs e)
             {
                 try
                 {
@@ -240,7 +251,8 @@ namespace Bug_Tracking_Application
                     }
                     else
                     {
-                        MessageBox.Show("Couldn't Update selected member"); //display error message as data cannot be updated
+					//display error message as data cannot be updated
+					MessageBox.Show("Couldn't Update selected member"); 
                         dgvmembers.DataSource = mc.GetAllUsers();
                         HelperClass.makeFieldsBlank(grpContainer);
                         picmembers.Image = null;
@@ -252,6 +264,8 @@ namespace Bug_Tracking_Application
                 }
             }
 
+
+        // delete the data entered into the database
             private void btndelete_Click(object sender, EventArgs e)
             {
 
@@ -272,14 +286,16 @@ namespace Bug_Tracking_Application
                            3);
                     if (res == true)
                     {
-                        MessageBox.Show("Success to Delete Member");
+                    //display message of successfully deleted
+                    MessageBox.Show("Success to Delete Member");
                         dgvmembers.DataSource = mc.GetAllUsers();
                         HelperClass.makeFieldsBlank(grpContainer);
                         picmembers.Image = null;
                     }
                     else
                     {
-                        MessageBox.Show("Couldn't delete selected memeber"); //display error message as data cannot be deleted
+                    //display error message as data cannot be deleted
+                    MessageBox.Show("Couldn't delete selected memeber"); 
                         dgvmembers.DataSource = mc.GetAllUsers();
                         HelperClass.makeFieldsBlank(grpContainer);
                         picmembers.Image = null;

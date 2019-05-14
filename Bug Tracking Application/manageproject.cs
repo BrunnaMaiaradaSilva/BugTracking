@@ -29,6 +29,7 @@ namespace Bug_Tracking_Application
             this.Close();
         }
 
+        //adding the data to display on datagridview and store to database
         private void btnadd_Click(object sender, EventArgs e)
         {
 
@@ -59,6 +60,7 @@ namespace Bug_Tracking_Application
 
         private void CreateProject()
         {
+            //try catch exception
             try
             {
                 bool res = blc.ProjectTable(0,
@@ -69,13 +71,15 @@ namespace Bug_Tracking_Application
                        1);
                 if (res == true)
                 {
-                    MessageBox.Show("Success to Create Project");
+                    //display message as added project
+                    MessageBox.Show("Add to Create Project");
                     dgvprojects.DataSource = pc.GetAllProjects();
                     HelperClass.makeFieldsBlank(grpContainer);
                 }
                 else
                 {
-                    MessageBox.Show("Couldn't Create selected Project");
+                    //display error message as data cannot be added
+                    MessageBox.Show("Couldn't Add selected Project");
                     dgvprojects.DataSource = pc.GetAllProjects();
                     HelperClass.makeFieldsBlank(grpContainer);
                 }
@@ -85,6 +89,8 @@ namespace Bug_Tracking_Application
                 MessageBox.Show(ex.Message);
             }
         }
+
+        
         public bool DublicateProject()
         {
             int x = 0;
@@ -93,7 +99,7 @@ namespace Bug_Tracking_Application
 
                 for (int i = 0; i < dgvprojects.Rows.Count; i++)
                 {
-                    if (txtprojectname.Text == dgvprojects.Rows[i].Cells["projectname"].Value.ToString())
+                    if (txtprojectname.Text == dgvprojects.Rows[i].Cells["ProjectName"].Value.ToString())
                         x = 1;
                 }
 
@@ -109,15 +115,17 @@ namespace Bug_Tracking_Application
                 return false;
         }
 
+
+        //retrive all data from datagridview to the details entry section on a single click
         private void dgvprojects_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                  ProjectId = Convert.ToInt32(dgvprojects.SelectedRows[0].Cells["ProjectId"].Value.ToString());
-                  txtprojectname.Text = dgvprojects.SelectedRows[0].Cells["projectname"].Value.ToString();
-                  dtpstartingdate.Text = dgvprojects.SelectedRows[0].Cells["startingdate"].Value.ToString();
-                  dtpfinishingdate.Text = dgvprojects.SelectedRows[0].Cells["finishingdate"].Value.ToString();
-                  txtdescription.Text = dgvprojects.SelectedRows[0].Cells["description"].Value.ToString();
+                  txtprojectname.Text = dgvprojects.SelectedRows[0].Cells["ProjectName"].Value.ToString();
+                  dtpstartingdate.Text = dgvprojects.SelectedRows[0].Cells["StartingDate"].Value.ToString();
+                  dtpfinishingdate.Text = dgvprojects.SelectedRows[0].Cells["FinishingDate"].Value.ToString();
+                  txtdescription.Text = dgvprojects.SelectedRows[0].Cells["Description"].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -126,11 +134,14 @@ namespace Bug_Tracking_Application
             }
         }
 
+        //retrieve the data on DataGridView 
         private void manageproject_Load(object sender, EventArgs e)
         {
             dgvprojects.DataSource = pc.GetAllProjects();
         }
 
+
+        //update the date entered into the database
         private void btnupdate_Click(object sender, EventArgs e)
         {
             try
@@ -143,12 +154,14 @@ namespace Bug_Tracking_Application
                        2);
                 if (res == true)
                 {
+                    //display message as updated project
                     MessageBox.Show("Success to Update Project");
                     dgvprojects.DataSource = pc.GetAllProjects();
                     HelperClass.makeFieldsBlank(grpContainer);
                 }
                 else
                 {
+                    //display error message as data cannot be updated
                     MessageBox.Show("Couldn't Update selected Project");
                     dgvprojects.DataSource = pc.GetAllProjects();
                     HelperClass.makeFieldsBlank(grpContainer);
@@ -160,6 +173,8 @@ namespace Bug_Tracking_Application
             }
         }
 
+
+        // delete the data entered into the database
         private void btndelete_Click(object sender, EventArgs e)
         {
             try
@@ -172,12 +187,14 @@ namespace Bug_Tracking_Application
                        3);
                 if (res == true)
                 {
+                    //display message as deleted project
                     MessageBox.Show("Success to Delete Project");
                     dgvprojects.DataSource = pc.GetAllProjects();
                     HelperClass.makeFieldsBlank(grpContainer);
                 }
                 else
                 {
+                    //display error message as data cannot be deleted
                     MessageBox.Show("Couldn't Delete selected Project");
                     dgvprojects.DataSource = pc.GetAllProjects();
                     HelperClass.makeFieldsBlank(grpContainer);

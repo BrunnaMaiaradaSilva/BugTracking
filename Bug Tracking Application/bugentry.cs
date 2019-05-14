@@ -27,11 +27,15 @@ namespace Bug_Tracking_Application
         BugEntryClass bec = new BugEntryClass();
         public int BugId;
 
+
+        //close the form
         private void btnexit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+
+        //adding the data to display on datagridview and store to database
         private void btnadd_Click(object sender, EventArgs e)
         {
             if (dtpdate.Text == "")
@@ -82,9 +86,10 @@ namespace Bug_Tracking_Application
             { CreateBugs(); }
         }
 
-        //create user
+        //create bugs to fill the empty space 
         private void CreateBugs() 
         {
+            //try catch exception
             try
             {
                 bool res = blc.BugTable(0,
@@ -102,14 +107,16 @@ namespace Bug_Tracking_Application
                        1);
                 if (res == true)
                 {
-                    MessageBox.Show("Success to Entry Bugs");
+                    //display message of successfully added
+                    MessageBox.Show("Added to Entry Bugs");
                     dgvbugs.DataSource = bec.GetAllBugs();
                     HelperClass.makeFieldsBlank(grpContainer);
                     picbugs.Image = null;
                 }
                 else
                 {
-                    MessageBox.Show("Couldn't success to Entry Bugs"); //display error message as data cannot be stored
+                    //display error message as data cannot be stored
+                    MessageBox.Show("Couldn't Add data to Entry Bugs"); 
                     dgvbugs.DataSource = bec.GetAllBugs();
                     HelperClass.makeFieldsBlank(grpContainer);
                     picbugs.Image = null;
@@ -122,22 +129,23 @@ namespace Bug_Tracking_Application
         }
 
 
+        //retrive all data from datagridview to the details entry section on a single click
         private void dgvbugs_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                BugId = Convert.ToInt32(dgvbugs.SelectedRows[0].Cells["bugid"].Value.ToString());
-                dtpdate.Text = dgvbugs.SelectedRows[0].Cells["date"].Value.ToString();
-                txtclasslibrary.Text = dgvbugs.SelectedRows[0].Cells["classlibrary"].Value.ToString();
-                txtblock.Text = dgvbugs.SelectedRows[0].Cells["block"].Value.ToString();
-                txtidentifiedby.Text = dgvbugs.SelectedRows[0].Cells["identifiedby"].Value.ToString();
-                txtclass.Text = dgvbugs.SelectedRows[0].Cells["class"].Value.ToString();
-                txtlinenumber.Text = dgvbugs.SelectedRows[0].Cells["linenumber"].Value.ToString();
-                cmbproject.Text = dgvbugs.SelectedRows[0].Cells["project"].Value.ToString();
-                txtmethod.Text = dgvbugs.SelectedRows[0].Cells["method"].Value.ToString();
-                txtbugdetails.Text = dgvbugs.SelectedRows[0].Cells["bugdetails"].Value.ToString();
-                txtcode.Text = dgvbugs.SelectedRows[0].Cells["code"].Value.ToString();
-                MemoryStream memoryStream = new MemoryStream((byte[])dgvbugs.SelectedRows[0].Cells["profilePicture"].Value);
+                BugId = Convert.ToInt32(dgvbugs.SelectedRows[0].Cells["BugId"].Value.ToString());
+                dtpdate.Text = dgvbugs.SelectedRows[0].Cells["Date"].Value.ToString();
+                txtclasslibrary.Text = dgvbugs.SelectedRows[0].Cells["ClassLibrary"].Value.ToString();
+                txtblock.Text = dgvbugs.SelectedRows[0].Cells["Block"].Value.ToString();
+                txtidentifiedby.Text = dgvbugs.SelectedRows[0].Cells["IdentifiedBy"].Value.ToString();
+                txtclass.Text = dgvbugs.SelectedRows[0].Cells["Class"].Value.ToString();
+                txtlinenumber.Text = dgvbugs.SelectedRows[0].Cells["LineNumber"].Value.ToString();
+                cmbproject.Text = dgvbugs.SelectedRows[0].Cells["Project"].Value.ToString();
+                txtmethod.Text = dgvbugs.SelectedRows[0].Cells["Method"].Value.ToString();
+                txtbugdetails.Text = dgvbugs.SelectedRows[0].Cells["BugDetails"].Value.ToString();
+                txtcode.Text = dgvbugs.SelectedRows[0].Cells["Code"].Value.ToString();
+                MemoryStream memoryStream = new MemoryStream((byte[])dgvbugs.SelectedRows[0].Cells["Snap"].Value);
                 picbugs.Image = Image.FromStream(memoryStream);
             }
             catch (Exception ex)
@@ -147,6 +155,7 @@ namespace Bug_Tracking_Application
             }
         }
 
+        //retrieve the data on DataGridView 
         private void bugentry_Load(object sender, EventArgs e)
         {
             dgvbugs.DataSource = bec.GetAllBugs();
@@ -157,6 +166,7 @@ namespace Bug_Tracking_Application
             cmbproject.SelectedIndex = -1;
         }
 
+        //Browse image in button click
         private void btnbrowse_Click_1(object sender, EventArgs e)
         {
             try
@@ -184,6 +194,89 @@ namespace Bug_Tracking_Application
             catch (Exception ex)
             {
 
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        // update the data entered into the database
+        private void Btnupdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool res = blc.BugTable(BugId,
+                  Convert.ToDateTime(dtpdate.Text),
+                   txtclasslibrary.Text,
+                   txtblock.Text,
+                   txtidentifiedby.Text,
+                   txtclass.Text,
+                   txtlinenumber.Text,
+                   cmbproject.Text,
+                   txtmethod.Text,
+                txtbugdetails.Text,
+                txtcode.Text,
+                   HelperClass.imageConverter(picbugs),
+                       2);
+                if (res == true)
+                {
+                    //display message of successfully updated
+                    MessageBox.Show("Success to Update Bugs");
+                    dgvbugs.DataSource = bec.GetAllBugs();
+                    HelperClass.makeFieldsBlank(grpContainer);
+                    picbugs.Image = null;
+                }
+                else
+                {
+                    //display error message as data cannot be updated
+                    MessageBox.Show("Couldn't success to Update Bugs"); 
+                    dgvbugs.DataSource = bec.GetAllBugs();
+                    HelperClass.makeFieldsBlank(grpContainer);
+                    picbugs.Image = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        // delete the data entered into the database
+        private void Btndelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool res = blc.BugTable(BugId,
+                  Convert.ToDateTime(dtpdate.Text),
+                   txtclasslibrary.Text,
+                   txtblock.Text,
+                   txtidentifiedby.Text,
+                   txtclass.Text,
+                   txtlinenumber.Text,
+                   cmbproject.Text,
+                   txtmethod.Text,
+                txtbugdetails.Text,
+                txtcode.Text,
+                   HelperClass.imageConverter(picbugs),
+                       3);
+                if (res == true)
+                {
+                    //display message of successfully deleted
+                    MessageBox.Show("Success to Delete Bugs");
+                    dgvbugs.DataSource = bec.GetAllBugs();
+                    HelperClass.makeFieldsBlank(grpContainer);
+                    picbugs.Image = null;
+                }
+                else
+                {
+                    //display error message as data cannot be deleted
+                    MessageBox.Show("Couldn't success to Delete Bugs"); 
+                    dgvbugs.DataSource = bec.GetAllBugs();
+                    HelperClass.makeFieldsBlank(grpContainer);
+                    picbugs.Image = null;
+                }
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
         }

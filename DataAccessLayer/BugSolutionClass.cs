@@ -25,14 +25,14 @@ namespace DataAccessLayer
             {
                 SqlCommand cmd = new SqlCommand("SP_ManageBugSolutions", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@bugsolutionid", BugSolutionId);
-                cmd.Parameters.AddWithValue("@bugsolvedby", BugSolvedBy);
-                cmd.Parameters.AddWithValue("@date", Date);
-                cmd.Parameters.AddWithValue("@project", Project);
-                cmd.Parameters.AddWithValue("@bugdetails", BugDetails);
-                cmd.Parameters.AddWithValue("@solutiondetails", SolutionDetails);
-                cmd.Parameters.AddWithValue("@code", Code);
-                cmd.Parameters.AddWithValue("@snap", Snap);
+                cmd.Parameters.AddWithValue("@BugsolutionId", BugSolutionId);
+                cmd.Parameters.AddWithValue("@BugsolvedBy", BugSolvedBy);
+                cmd.Parameters.AddWithValue("@Date", Date);
+                cmd.Parameters.AddWithValue("@Project", Project);
+                cmd.Parameters.AddWithValue("@BugDetails", BugDetails);
+                cmd.Parameters.AddWithValue("@SolutionDetails", SolutionDetails);
+                cmd.Parameters.AddWithValue("@Code", Code);
+                cmd.Parameters.AddWithValue("@Snap", Snap);
                 cmd.Parameters.AddWithValue("@Mode", Mode);
                 conn.Open();
                 int result = cmd.ExecuteNonQuery();

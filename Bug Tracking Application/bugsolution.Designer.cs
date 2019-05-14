@@ -232,6 +232,7 @@
             this.btnupdate.TabIndex = 41;
             this.btnupdate.Text = "Update";
             this.btnupdate.UseVisualStyleBackColor = false;
+            this.btnupdate.Click += new System.EventHandler(this.Btnupdate_Click);
             // 
             // btnexit
             // 
@@ -270,6 +271,7 @@
             this.btndelete.TabIndex = 40;
             this.btndelete.Text = "Delete";
             this.btndelete.UseVisualStyleBackColor = false;
+            this.btndelete.Click += new System.EventHandler(this.Btndelete_Click);
             // 
             // cmbproject
             // 
