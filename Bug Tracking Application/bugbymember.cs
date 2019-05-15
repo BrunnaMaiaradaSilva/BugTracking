@@ -20,6 +20,7 @@ namespace Bug_Tracking_Application
         }
         MemberClass mc = new MemberClass();
         BusinessLogicClass blc = new BusinessLogicClass();
+        ReportClass rc = new ReportClass();
 
         private void Bugbymember_Load(object sender, EventArgs e)
         {
@@ -37,17 +38,22 @@ namespace Bug_Tracking_Application
             }
         }
 
-        private void Btnsearch_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                dgvReport.DataSource = rc.GetBugByMember(Convert.ToInt32(cmbMemberName.SelectedValue.ToString()));
-            }
-            catch (Exception ex)
-            {
+        //private void Btnsearch_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        dgvReport.DataSource = rc.GetBugByMember(Convert.ToInt32(cmbMemberName.SelectedValue.ToString()));
+        //    }
+        //    catch (Exception ex)
+        //    {
 
-                MessageBox.Show(ex.Message);
-            }
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
+
+        private void CmbMemberName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

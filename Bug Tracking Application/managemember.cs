@@ -306,7 +306,8 @@ namespace Bug_Tracking_Application
                     MessageBox.Show(ex.Message);
                 }
             }
-        }
+
+    }
 
     }
 

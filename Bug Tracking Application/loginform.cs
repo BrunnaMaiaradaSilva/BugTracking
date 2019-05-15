@@ -28,5 +28,6 @@ namespace Bug_Tracking_Application
         {
             this.Close();
         }
+
     }
 }

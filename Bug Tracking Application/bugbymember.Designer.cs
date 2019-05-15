@@ -54,6 +54,7 @@
             this.cmbMemberName.Name = "cmbMemberName";
             this.cmbMemberName.Size = new System.Drawing.Size(194, 25);
             this.cmbMemberName.TabIndex = 1;
+            this.cmbMemberName.SelectedIndexChanged += new System.EventHandler(this.CmbMemberName_SelectedIndexChanged);
             // 
             // btnsearch
             // 
@@ -63,7 +64,6 @@
             this.btnsearch.TabIndex = 2;
             this.btnsearch.Text = "Search";
             this.btnsearch.UseVisualStyleBackColor = true;
-            this.btnsearch.Click += new System.EventHandler(this.Btnsearch_Click);
             // 
             // groupBox1
             // 
