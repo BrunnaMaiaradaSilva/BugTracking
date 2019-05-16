@@ -56,7 +56,7 @@
             // btnupdate
             // 
             this.btnupdate.BackColor = System.Drawing.Color.Black;
-            this.btnupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnupdate.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnupdate.ForeColor = System.Drawing.Color.White;
             this.btnupdate.Location = new System.Drawing.Point(467, 83);
             this.btnupdate.Name = "btnupdate";
@@ -69,7 +69,7 @@
             // btnadd
             // 
             this.btnadd.BackColor = System.Drawing.Color.Black;
-            this.btnadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnadd.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnadd.ForeColor = System.Drawing.Color.White;
             this.btnadd.Location = new System.Drawing.Point(467, 43);
             this.btnadd.Name = "btnadd";
@@ -101,7 +101,7 @@
             // btnexit
             // 
             this.btnexit.BackColor = System.Drawing.Color.Black;
-            this.btnexit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnexit.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnexit.ForeColor = System.Drawing.Color.White;
             this.btnexit.Location = new System.Drawing.Point(467, 163);
             this.btnexit.Name = "btnexit";
@@ -114,7 +114,7 @@
             // btndelete
             // 
             this.btndelete.BackColor = System.Drawing.Color.Black;
-            this.btndelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndelete.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndelete.ForeColor = System.Drawing.Color.White;
             this.btndelete.Location = new System.Drawing.Point(467, 124);
             this.btndelete.Name = "btndelete";

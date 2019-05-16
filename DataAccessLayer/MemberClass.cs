@@ -71,5 +71,29 @@ namespace DataAccessLayer
             }
             finally { conn.Close(); }
         }
+        public string Login(String UserName, String Password)
+        {
+            try
+            {
+                String Role = "";
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("Select Role from MemberTable where UserName=@UserName and Password=@Password", conn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@UserName", UserName);
+                cmd.Parameters.AddWithValue("@Password", Password);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
+                conn.Close();
+                Role = dt.Rows[0]["Role"].ToString();
+                return Role;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { conn.Close(); }
+        }
     }
 }

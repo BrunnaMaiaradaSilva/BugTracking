@@ -320,12 +320,7 @@ namespace Bug_Tracking_Application
 
         }
 
-        private void Txtcontact_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         }
     }
 
-    }
 
