@@ -284,6 +284,7 @@
             this.txtcontact.Name = "txtcontact";
             this.txtcontact.Size = new System.Drawing.Size(210, 26);
             this.txtcontact.TabIndex = 44;
+            this.txtcontact.TextChanged += new System.EventHandler(this.Txtcontact_TextChanged);
             // 
             // label2
             // 
@@ -370,6 +371,7 @@
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(210, 26);
             this.txtemail.TabIndex = 6;
+            this.txtemail.TextChanged += new System.EventHandler(this.Txtemail_TextChanged);
             // 
             // txtaddress
             // 

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DataAccessLayer;
 using BusinessLogicLayer;
 using Microsoft.VisualBasic;
+using System.Text.RegularExpressions;
 using System.IO;
 
 namespace Bug_Tracking_Application
@@ -19,6 +20,7 @@ namespace Bug_Tracking_Application
         public managemember()
         {
             InitializeComponent();
+            txtcontact.MaxLength = 10;
         }
         //acccessing data from various classes
         BusinessLogicClass blc = new BusinessLogicClass();
@@ -307,6 +309,22 @@ namespace Bug_Tracking_Application
                 }
             }
 
+        private void Txtemail_TextChanged(object sender, EventArgs e)
+        {
+            Regex regex = new Regex(@"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
+            bool isValid = regex.IsMatch(txtemail.Text.Trim());
+            if (!isValid==false)
+            {
+                MessageBox.Show("Invalid Email.");
+            }
+
+        }
+
+        private void Txtcontact_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        }
     }
 
     }
