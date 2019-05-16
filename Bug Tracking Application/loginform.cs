@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BusinessLogicLayer;
 using DataAccessLayer;
 
 namespace Bug_Tracking_Application
@@ -63,5 +62,14 @@ namespace Bug_Tracking_Application
             this.Close();
         }
 
+        private void Txtusername_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtusername.BackColor = Color.White;
+        }
+
+        private void Txtpassword_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtpassword.BackColor = Color.White;
+        }
     }
 }

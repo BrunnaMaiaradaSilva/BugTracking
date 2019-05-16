@@ -45,5 +45,10 @@ namespace Bug_Tracking_Application
             bugsolution frm = new bugsolution();
             frm.ShowDialog();
         }
+
+        private void BtnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

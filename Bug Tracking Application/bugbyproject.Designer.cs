@@ -1,6 +1,6 @@
 ﻿namespace Bug_Tracking_Application
 {
-    partial class bugbyproduct
+    partial class bugbyproject
     {
         /// <summary>
         /// Required designer variable.
@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvReportproject = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnsearch = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbprojectname = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReportproject)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvReportproject
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 72);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(755, 150);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvReportproject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReportproject.Location = new System.Drawing.Point(2, 72);
+            this.dgvReportproject.Name = "dgvReportproject";
+            this.dgvReportproject.Size = new System.Drawing.Size(755, 150);
+            this.dgvReportproject.TabIndex = 1;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnsearch);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbprojectname);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(2, 2);
@@ -66,34 +66,37 @@
             this.btnsearch.TabIndex = 2;
             this.btnsearch.Text = "Search";
             this.btnsearch.UseVisualStyleBackColor = true;
+            this.btnsearch.Click += new System.EventHandler(this.Btnsearch_Click);
             // 
-            // comboBox1
+            // cmbprojectname
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(174, 30);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(194, 25);
-            this.comboBox1.TabIndex = 1;
+            this.cmbprojectname.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbprojectname.FormattingEnabled = true;
+            this.cmbprojectname.Location = new System.Drawing.Point(174, 30);
+            this.cmbprojectname.Name = "cmbprojectname";
+            this.cmbprojectname.Size = new System.Drawing.Size(194, 25);
+            this.cmbprojectname.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(70, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 17);
+            this.label1.Size = new System.Drawing.Size(90, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Product Name";
+            this.label1.Text = "Project Name";
             // 
-            // bugbyproduct
+            // bugbyproject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(755, 222);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvReportproject);
             this.Controls.Add(this.groupBox1);
-            this.Name = "bugbyproduct";
+            this.Name = "bugbyproject";
             this.Text = "bugbyproduct";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Bugbyproduct_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReportproject)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -102,10 +105,10 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvReportproject;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnsearch;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbprojectname;
         private System.Windows.Forms.Label label1;
     }
 }

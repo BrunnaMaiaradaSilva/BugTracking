@@ -51,11 +51,11 @@
     <Compile Include="bugbymember.Designer.cs">
       <DependentUpon>bugbymember.cs</DependentUpon>
     </Compile>
-    <Compile Include="bugbyproduct.cs">
+    <Compile Include="bugbyproject.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="bugbyproduct.Designer.cs">
-      <DependentUpon>bugbyproduct.cs</DependentUpon>
+    <Compile Include="bugbyproject.Designer.cs">
+      <DependentUpon>bugbyproject.cs</DependentUpon>
     </Compile>
     <Compile Include="bugentry.cs">
       <SubType>Form</SubType>
@@ -82,12 +82,6 @@
     <Compile Include="loginform.Designer.cs">
       <DependentUpon>loginform.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
-    </Compile>
     <Compile Include="managemember.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,8 +105,8 @@
     <EmbeddedResource Include="bugbymember.resx">
       <DependentUpon>bugbymember.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="bugbyproduct.resx">
-      <DependentUpon>bugbyproduct.cs</DependentUpon>
+    <EmbeddedResource Include="bugbyproject.resx">
+      <DependentUpon>bugbyproject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="bugentry.resx">
       <DependentUpon>bugentry.cs</DependentUpon>
@@ -125,9 +119,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="loginform.resx">
       <DependentUpon>loginform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="managemember.resx">
       <DependentUpon>managemember.cs</DependentUpon>

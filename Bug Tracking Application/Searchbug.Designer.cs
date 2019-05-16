@@ -64,6 +64,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(152, 33);
             this.txtSearch.TabIndex = 48;
+            this.txtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
             // 
             // label3
             // 
@@ -189,6 +190,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Searchbug";
             this.Text = "Searchbug";
+            this.Load += new System.EventHandler(this.Searchbug_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsearchbug)).EndInit();

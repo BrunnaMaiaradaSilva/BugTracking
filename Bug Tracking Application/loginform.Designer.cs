@@ -140,6 +140,7 @@
             this.txtusername.Name = "txtusername";
             this.txtusername.Size = new System.Drawing.Size(138, 20);
             this.txtusername.TabIndex = 3;
+            this.txtusername.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Txtusername_MouseClick);
             // 
             // txtpassword
             // 
@@ -148,6 +149,7 @@
             this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(138, 20);
             this.txtpassword.TabIndex = 4;
+            this.txtpassword.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Txtpassword_MouseClick);
             // 
             // loginform
             // 

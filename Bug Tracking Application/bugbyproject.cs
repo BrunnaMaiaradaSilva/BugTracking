@@ -6,30 +6,30 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DataAccessLayer;
 using BusinessLogicLayer;
-using System.Windows.Forms;
 
 namespace Bug_Tracking_Application
 {
-    public partial class bugbymember : Form
+    public partial class bugbyproject : Form
     {
-        public bugbymember()
+        public bugbyproject()
         {
             InitializeComponent();
         }
-        MemberClass mc = new MemberClass();
-        BusinessLogicClass blc = new BusinessLogicClass();
+        ProjectClass pc = new ProjectClass();
         ReportClass rc = new ReportClass();
+        BusinessLogicClass blc = new BusinessLogicClass();
 
-        private void Bugbymember_Load(object sender, EventArgs e)
+        private void Bugbyproduct_Load(object sender, EventArgs e)
         {
             try
             {
-                cmbMemberName.DataSource = mc.GetAllUsers();
-                cmbMemberName.DisplayMember = "MemberName";
-                cmbMemberName.ValueMember = "MemberId";
-                cmbMemberName.SelectedIndex = -1;
+                cmbprojectname.DataSource = pc.GetAllProjects();
+                cmbprojectname.DisplayMember = "ProjectName";
+                cmbprojectname.ValueMember = "ProjectId";
+                cmbprojectname.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -42,18 +42,12 @@ namespace Bug_Tracking_Application
         {
             try
             {
-                dgvReport.DataSource = rc.GetBugByMember(Convert.ToInt32(cmbMemberName.SelectedValue.ToString()));
+                dgvReportproject.DataSource = rc.GetBugByProject(Convert.ToInt32(cmbprojectname.SelectedValue.ToString()));
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void CmbMemberName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
