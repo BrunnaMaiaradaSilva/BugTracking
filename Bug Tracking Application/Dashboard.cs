@@ -50,5 +50,11 @@ namespace Bug_Tracking_Application
         {
             this.Close();
         }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            SearchForm frm = new SearchForm();
+            frm.ShowDialog();
+        }
     }
 }

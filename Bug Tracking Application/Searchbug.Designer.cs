@@ -180,6 +180,7 @@
             this.dgvsearchbug.Name = "dgvsearchbug";
             this.dgvsearchbug.Size = new System.Drawing.Size(864, 150);
             this.dgvsearchbug.TabIndex = 50;
+            this.dgvsearchbug.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgvsearchbug_CellContentClick);
             // 
             // Searchbug
             // 

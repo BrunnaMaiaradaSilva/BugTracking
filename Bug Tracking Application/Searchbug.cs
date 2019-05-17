@@ -20,17 +20,20 @@ namespace Bug_Tracking_Application
         }
         BugSolutionClass bsc = new BugSolutionClass();
         ProjectClass pc = new ProjectClass();
+        MemberClass mc = new MemberClass();
+        BugEntryClass bec = new BugEntryClass();
+        BusinessLogicClass blc = new BusinessLogicClass();
 
         private void Searchbug_Load(object sender, EventArgs e)
         {
             try
             {
 
-                dgvsearchbug.DataSource = BugSolutionClass.getAllBugSolutions();
-                lblTotalProjects.Text = ProjectClass.countNumberOfProjects().ToString();
-                lblTotalMembers.Text = memberClass.totalMember().ToString();
-                lblTotalRegBug.Text = bugEntry.getAllBugs().Rows.Count.ToString();
-                lblTotalSolvedBug.Text = bugSolutionClass.getAllBugSolutions().Rows.Count.ToString();
+                //dgvsearchbug.DataSource = BugSolutionClass.getAllBugSolutions();
+                //lblTotalProjects.Text = projectClass.countNumberOfProjects().ToString();
+                //lblTotalMembers.Text = memberClass.totalMember().ToString();
+                //lblTotalRegBug.Text = bugEntry.getAllBugs().Rows.Count.ToString();
+                //lblTotalSolvedBug.Text = bugSolutionClass.getAllBugSolutions().Rows.Count.ToString();
             }
             catch (Exception ex)
             {
@@ -42,6 +45,11 @@ namespace Bug_Tracking_Application
         private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Dgvsearchbug_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //dgvsearchbug.DataSource = BugSolutionClass.searchBugSolutionByBugDetails(txtSearch.Text);
         }
     }
 }

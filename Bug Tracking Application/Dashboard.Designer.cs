@@ -44,6 +44,7 @@
             this.btnMembers = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,7 +67,6 @@
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.btnLogout);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -79,11 +79,11 @@
             this.btnLogout.BackColor = System.Drawing.Color.Black;
             this.btnLogout.Font = new System.Drawing.Font("Times New Roman", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(775, 46);
+            this.btnLogout.Location = new System.Drawing.Point(789, 10);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(75, 26);
+            this.btnLogout.Size = new System.Drawing.Size(69, 26);
             this.btnLogout.TabIndex = 1;
-            this.btnLogout.Text = "LOG OUT";
+            this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
@@ -158,6 +158,7 @@
             this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // btnSolutions
             // 
@@ -214,6 +215,8 @@
             // panel4
             // 
             this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
+            this.panel4.Controls.Add(this.btnLogout);
+            this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Location = new System.Drawing.Point(0, 466);
             this.panel4.Name = "panel4";
@@ -226,11 +229,23 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(687, 23);
+            this.label2.Location = new System.Drawing.Point(15, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(182, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Developed By Sabina Bhandari";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(708, 10);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 26);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Git Hub";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // Dashboard
             // 
@@ -271,5 +286,6 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }
