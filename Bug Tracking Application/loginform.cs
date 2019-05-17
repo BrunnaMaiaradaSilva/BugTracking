@@ -71,5 +71,10 @@ namespace Bug_Tracking_Application
         {
             txtpassword.BackColor = Color.White;
         }
+
+        private void Loginform_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

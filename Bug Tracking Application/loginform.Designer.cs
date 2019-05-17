@@ -51,7 +51,7 @@
             this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(2, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(904, 535);
+            this.panel1.Size = new System.Drawing.Size(466, 374);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -65,7 +65,7 @@
             this.panel2.Controls.Add(this.btnclose);
             this.panel2.Controls.Add(this.txtusername);
             this.panel2.Controls.Add(this.txtpassword);
-            this.panel2.Location = new System.Drawing.Point(200, 72);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(459, 369);
             this.panel2.TabIndex = 8;
@@ -155,11 +155,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(909, 535);
+            this.ClientSize = new System.Drawing.Size(464, 375);
             this.Controls.Add(this.panel1);
             this.Name = "loginform";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "loginform";
+            this.Load += new System.EventHandler(this.Loginform_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

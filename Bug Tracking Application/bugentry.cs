@@ -42,43 +42,43 @@ namespace Bug_Tracking_Application
             {
                 MessageBox.Show("Provide Date: Full information required");
             }
-            if (txtclasslibrary.Text == "")
+            else if (txtclasslibrary.Text == "")
             {
                 MessageBox.Show("Provide Class Library: Full information required");
             }
-            if (txtblock.Text == "")
+            else if (txtblock.Text == "")
             {
                 MessageBox.Show("Provide Block: Full information required");
             }
-            if (txtidentifiedby.Text == "")
+            else if (txtidentifiedby.Text == "")
             {
                 MessageBox.Show("Provide Identified by: Full information required");
             }
-            if (txtclass.Text == "")
+            else if (txtclass.Text == "")
             {
                 MessageBox.Show("Provide Class: Full information required");
             }
-            if (txtlinenumber.Text == "")
+            else if (txtlinenumber.Text == "")
             {
                 MessageBox.Show("Provide Line Number: Full information required");
             }
-            if (cmbproject.SelectedIndex == -1)
+            else if (cmbproject.SelectedIndex == -1)
             {
                 MessageBox.Show("Provide Project: Full information required");
             }
-            if (txtmethod.Text == "")
+            else if (txtmethod.Text == "")
             {
                 MessageBox.Show("Provide Method: Full information required");
             }
-            if (txtbugdetails.Text == "")
+            else if (txtbugdetails.Text == "")
             {
                 MessageBox.Show("Provide Bug Details: Full information required");
             }
-            if (txtcode.Text == "")
+            else if (txtcode.Text == "")
             {
                 MessageBox.Show("Provide Code: Full information required");
             }
-            if (btnbrowse.Text == "")
+            else if (btnbrowse.Text == "")
             {
                 MessageBox.Show("Provide Image: Full information required");
             }
